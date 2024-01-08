@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- By Henderson Bare
+Created: 3/22/2023
+Course: CS 3500, University of Utah, School of Computing
+Copyright: CS 3500 and Henderson Bare - This work may not be copied for use in academic course work
+
+I, Henderson Bare , certify that I wrote this code from scratch and did not copy it in part or in whole from another source.
+All references used in the completion of the assignment are cited in my README files and commented in the code -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatServer.MainPage">
+
+    <ScrollView>
+        <!--Outer Stack layout that consists of 2 nested vertical stack layouts-->
+        <StackLayout Orientation="Horizontal">
+            <!-- First stack layout that consists of all content on the left side of the GUI -->
+            <StackLayout Orientation="Vertical"
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            WidthRequest="600">
+
+                <Label
+                    Text="Participants"
+                    HorizontalOptions="Center"
+                    />
+
+                <Editor
+                        Placeholder="Participants go here"
+                        x:Name="Participants"
+                        VerticalTextAlignment="Start"
+                        IsReadOnly="True"
+                        WidthRequest="400"
+                        HeightRequest="400"
+                        />
+
+                <Button
+                    x:Name="ShutdownButton"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    Text="Shutdown Server"
+                    Clicked="ShutdownButton_Clicked"
+                    />
+
+            </StackLayout>
+            <!-- Second stack layout that consists of all content on the right side of the GUI -->
+            <StackLayout Orientation="Vertical"
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Start"
+            HorizontalOptions="End"
+            WidthRequest="400">
+
+                <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="25">
+                    <Label 
+                    Text ="Server Name" 
+                    VerticalOptions="Center"/>
+                    <Entry
+                    Placeholder="host name goes here"
+                    x:Name="ServerName"
+                    Text="localhost" 
+                    TextChanged="ServerName_TextChanged"
+                    VerticalOptions="Center"
+                    />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="25">
+                    <Label 
+                    Text ="Server IP Address" 
+                    VerticalOptions="Center"/>
+                    <Entry 
+                    Placeholder="an address goes here"
+                    x:Name="IPAddress"
+                    Text="127.0.0.1"
+                    TextChanged="IPAddress_Changed"
+                    VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <Editor
+                Placeholder=""
+                x:Name = "ConsoleLog"
+                Text=""
+                VerticalTextAlignment="Start"
+                IsReadOnly="True"
+                HorizontalOptions="EndAndExpand"
+                HeightRequest="350"
+                WidthRequest="350"
+                />
+
+
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

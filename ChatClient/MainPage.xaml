@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatClient.MainPage">
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="Help">
+            <MenuFlyoutItem Text="Help" Clicked="MenuFlyoutItem_Clicked"></MenuFlyoutItem>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="10"
+            Padding="30,0"
+            VerticalOptions="Start">
+            <!--Server Address Label & Entry-->
+            <HorizontalStackLayout
+                Spacing="10"
+                Padding="30,0">
+                <Label
+                    Text="Server Address"
+                    FontSize="18"
+                    HorizontalOptions="Start"/>
+                <Entry
+                    x:Name="AddressEntry"
+                    Text="127.0.0.1"
+                    FontSize="18"
+                    Completed="AddressEntry_Completed"
+                    TextChanged="AddressEntry_Changed"
+                    HorizontalOptions="Start"
+                    MinimumWidthRequest="200"/>
+            </HorizontalStackLayout>
+            <!--Name Label & Entry-->
+            <HorizontalStackLayout
+                Spacing="10"
+                Padding="30,0">
+                <Label
+                    Text="Your Name"
+                    FontSize="18"
+                    HorizontalOptions="Start"
+                    MinimumWidthRequest="193"
+                    MaximumWidthRequest="193"/>
+                <Entry
+                    x:Name="NameEntry"
+                    Text=""
+                    FontSize="18"
+                    Completed="NameEntry_Completed"
+                    TextChanged="NameEntry_Changed"
+                    HorizontalOptions="Start"
+                    MinimumWidthRequest="200"/>
+            </HorizontalStackLayout>
+            <!--Message Label & Entry-->
+            <HorizontalStackLayout
+                Spacing="10"
+                Padding="30,0">
+                <Label
+                    Text="Message"
+                    FontSize="18"
+                    HorizontalOptions="Start"/>
+                <Entry
+                    x:Name="MessageEntry"
+                    Text=""
+                    FontSize="18"
+                    Completed="MessageEntry_Completed"
+                    TextChanged="MessageEntry_Changed"
+                    HorizontalOptions="Start"
+                    MinimumWidthRequest="600"/>
+            </HorizontalStackLayout>
+            <!--Connect & Disconnect Button-->
+            <HorizontalStackLayout
+                Spacing="10"
+                Padding="30,0">
+                <Button
+                    x:Name="ConnectBtn"
+                    Text="Connect To Server"
+                    Clicked="ConnectBtn_Clicked"
+                    HorizontalOptions="Start"/>
+            </HorizontalStackLayout>
+            <!--Connection Status Label & Retrieve Users Button-->
+            <HorizontalStackLayout>
+                <Label
+                    x:Name="ConnectionStatusLabel"
+                    Text=""
+                    FontSize="26"
+                    HorizontalOptions="Center"
+                    MaximumWidthRequest="840"
+                    MinimumWidthRequest="840"/>
+                <Button
+                    x:Name="UsersBtn"
+                    Text="Retrieve Users"
+                    Clicked="UsersBtn_Clicked"
+                    HorizontalOptions="Start"
+                    MaximumHeightRequest="10"/>
+            </HorizontalStackLayout>
+            <!--Message Log & User List Entries-->
+            <HorizontalStackLayout>
+                <Editor
+                    x:Name="MessageLogEntry"
+                    Text=""
+                    MaximumHeightRequest="400"
+                    MinimumHeightRequest="400"
+                    MaximumWidthRequest="800"
+                    MinimumWidthRequest="800"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    VerticalTextAlignment="Start"
+                    HorizontalTextAlignment="Start"
+                    IsReadOnly="True"/>
+                <Editor
+                    x:Name="UserListEntry"
+                    Text=""
+                    MaximumHeightRequest="400"
+                    MinimumHeightRequest="400"
+                    MaximumWidthRequest="200"
+                    MinimumWidthRequest="200"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    VerticalTextAlignment="Start"
+                    HorizontalTextAlignment="Start"
+                    IsReadOnly="True"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
